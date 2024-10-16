@@ -21,13 +21,9 @@ git clone https://github.com/yourusername/use_algorand_testnet.git
 cd use_algorand_testnet
 ```
 
-### 2. Install Dependencies
+### 2. Let dependencies install on codespace start
 
-Install the required Python packages using pip:
-
-```bash
-pip install -r requirements.txt
-```
+Wait for the dependencies to finish setting up.
 
 ### 3. Run the Script
 
