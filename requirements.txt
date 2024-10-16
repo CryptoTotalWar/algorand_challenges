@@ -1,0 +1,3 @@
+algosdk
+python-dotenv
+#certifi
