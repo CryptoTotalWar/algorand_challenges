@@ -10,22 +10,45 @@ Before running this project, ensure you have the following installed:
 - Pip (Python package manager)
 - Algokit (pipx install algokit)
 
-## Getting Started
+## Getting Started (Local Machine or Codespace!)
 
-Follow the instructions below to set up the project on your local machine.
+Follow the instructions below to set up the project on your Local Machine or GitHub Codespace.
 
-### 1. Clone the Repository or skip setup and just enter a codespace!
+### 1. Clone the Repository or Skip Setup and Enter Codespace!
+
+If you're running locally:
 
 ```bash
 git clone https://github.com/yourusername/use_algorand_testnet.git
 cd use_algorand_testnet
 ```
 
-### 2. Let dependencies install on codespace start
+Alternatively, if you're using GitHub Codespace, simply open this repository in a Codespace, and proceed to the next step. The container setup and environment will be handled for you automatically!
 
-Wait for the dependencies to finish setting up.
+### 2. Codespace Setup
 
-### 3. Run the Script
+When entering the Codespace for the first time, the following will happen automatically:
+
+- Required ports (algod, kmd, indexer, etc.) will be forwarded.
+- Dependencies will be installed (algosdk, python-dotenv, and algokit).
+- The Algokit localnet will start.
+
+Just wait for this setup to complete before proceeding to run the script.
+
+### 3. Local Machine Setup (for VSCode without Docker)
+
+If you're using VSCode on your local machine, you do not need Docker as the project connects directly to a testnet node.
+
+- Open the cloned project in VSCode.
+- Ensure you have Python 3.12 or higher installed.
+- Install the dependencies manually:
+
+```bash
+pip3 install py-algorand-sdk python-dotenv
+pipx install algokit
+```
+
+### 4. Run the Script
 
 To generate a new Algorand account or use an existing one, run the following command:
 
@@ -33,7 +56,7 @@ To generate a new Algorand account or use an existing one, run the following com
 python main.py
 ```
 
-### 4. Understanding the Output
+### 5. Understanding the Output
 
 - If a mnemonic phrase is not found in the `.env` file, a new Algorand account will be generated, and the mnemonic will be saved to the `.env` file.
 - If the mnemonic already exists, the script will load the existing account and display the account address.
@@ -42,7 +65,7 @@ python main.py
 ## Code Overview
 
 - `main.py`: The main script that connects to the Algorand testnet, generates accounts, and manages the mnemonic phrase.
-- `.env`: A file that stores the mnemonic phrase securely.
+- `.env`: A file that stores the mnemonic phrase securely after you run the main.py file.
 
 ### Key Functions
 
