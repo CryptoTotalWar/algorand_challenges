@@ -17,8 +17,8 @@ Follow the instructions below to set up the project on your local machine.
 ### 1. Clone the Repository or skip setup and just enter a codespace!
 
 ```bash
-git clone https://github.com/yourusername/how-to-testnet-on-Algorand.git
-cd how-to-testnet-on-Algorand
+git clone https://github.com/yourusername/use_algorand_testnet.git
+cd use_algorand_testnet
 ```
 
 ### 2. Install Dependencies
