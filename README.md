@@ -1,6 +1,6 @@
 # Algorand Testnet Account Generator
 
-NOTE: before jumping in, it's as simple as `python main.py` when you codespace or local machine is set up, feel free to continue reading for more info and details! :) 
+NOTE: before jumping in, it's as simple as typing `"python main.py"` in the CLI when your codespace or local machine is set up, feel free to continue reading for more info and details! :) 
 
 This project demonstrates how to connect to the Algorand testnet, generate a new account, and manage the mnemonic phrase securely using a `.env` file. The code utilizes the `algosdk` library for interacting with the Algorand blockchain.
 
