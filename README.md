@@ -41,7 +41,8 @@ If you're using VSCode on your local machine, you do not need Docker as the proj
 
 - Open the cloned project in VSCode.
 - Ensure you have Python 3.12 or higher installed.
-- Install the dependencies manually:
+- If --> you are already an algokit user just `python main.py` it!
+- Else --> Install the dependencies manually:
 
 ```bash
 pip3 install py-algorand-sdk python-dotenv
