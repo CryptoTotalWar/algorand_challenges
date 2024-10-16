@@ -92,6 +92,10 @@ To obtain ALGO for testing on the Algorand testnet, follow these steps:
 3. **Confirm the Transaction**:
    After funding, you'll receive a transaction confirmation. You can view the transaction details at the provided link.
 
+### Fund your account with the online testnet dispenser
+
+You can also fund online with the testnet dispenser, but its not as fun..: https://bank.testnet.algorand.network/ 
+
 ## Important Notes
 
 - The mnemonic phrase is sensitive information. Store it securely and do not expose it publicly.
