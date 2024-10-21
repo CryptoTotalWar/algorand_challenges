@@ -2,10 +2,13 @@ import os
 from algosdk import account, mnemonic
 from dotenv import load_dotenv
 from algosdk.v2client import algod
-#import certifi
 
+"""
+If you are using certifi remember too: 'pip install certifi'
+"""
+import certifi
 # Set the SSL_CERT_FILE environment variable for Algonode connections
-#os.environ['SSL_CERT_FILE'] = certifi.where()
+os.environ['SSL_CERT_FILE'] = certifi.where()
 
 # Algonode testnet configuration (no token needed)
 algod_address = "https://testnet-api.algonode.cloud"
