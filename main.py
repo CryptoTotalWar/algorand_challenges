@@ -1,10 +1,12 @@
 import os
-from algosdk import account, mnemonic
+from algosdk import account, mnemonic, transaction
 from dotenv import load_dotenv
 from algosdk.v2client import algod
 
 """
 If you are using certifi remember too: 'pip install certifi'
+address: 5DP37VM4QGMSGDIZP5HP4EQFUF2HF5AE6JIWRJE3UKBLS4BRU6IOCXZVNE
+
 """
 import certifi
 # Set the SSL_CERT_FILE environment variable for Algonode connections
@@ -62,5 +64,33 @@ if __name__ == "__main__":
         # Get and display node status
         status = algod_client.status()
         print("Connected to Algorand Testnet.")
+
+
+        # Create a txn to opt in to application (smart contract)
+
+        # Opt-in to an application 
+        try: 
+            # Get Suggested transaction params from the network 
+            sp = algod_client.suggested_params()
+
+            # Create the opt-in transaction 
+            app_id = 724672197
+            opt_in_txn = transaction.ApplicationOptInTxn(address, sp, app_id)
+
+            # Sign the transaction
+            signed_opt_in = opt_in_txn.sign(private_key)
+
+            # Send the transaction 
+            txid = algod_client.send_transaction(signed_opt_in) 
+            print(f"Opt-in transaction sent with txid: {txid}")
+
+            # Wait for confirmation
+            optin_result = transaction.wait_for_confirmation(algod_client, txid, 4)
+            assert optin_result["confirmed-round"] > 0
+            print(f"Opt-in confirmed in round {optin_result['confirmed-round']}.")
+
+        except Exception as e:
+            print(f"Failed to opt-in to application: {e}")
+
     except Exception as e:
         print(f"Failed to connect to Algorand Testnet: {e}")
